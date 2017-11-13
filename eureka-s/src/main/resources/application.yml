@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: eureka-server
+
+server:
+    port: 8761
+
+eureka:
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+
+zuul:
+    prefix: /api
+    routes:
+        cloud-client:
+            path: /api/**
+            serviceId: cloud-client
+
+ribbon:
+    eureka:
+        enabled: false
+
+cloud-client:
+    ribbon:
+        listOfServers: 127.0.0.1:8080,127.0.0.1:8081
