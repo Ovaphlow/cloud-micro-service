@@ -11,7 +11,7 @@ public class Controller {
 
     @GetMapping("/test/")
     public String testi() {
-        return "response from eureka-controller-0";
+        return "response from eureka-controller-王绪楠";
     }
 
     @RequestMapping("/test/{{fallback}}")
